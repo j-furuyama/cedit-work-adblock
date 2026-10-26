@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "sources": {
+    "easylist": {
+      "revision": "7cc57b95b7a68d7d87f6e8aedeb2615fec707c5b",
+      "sha256": "cb08c46011c5207bb36602663f9c7c7a773e3a8b3bb5cbdf703f85ee706980f2",
+      "retrievedAt": "2026-10-25T15:16:12Z"
+    },
+    "adguard-japanese": {
+      "revision": "c966de5a825c21b518c5ea6e4bd62799852b1519",
+      "sha256": "761fddb9db6374d17b6d50556a122f290a0c8e0272a511e6d421956f18b9a0fe",
+      "retrievedAt": "2026-10-25T23:57:47Z"
+    }
+  }
+}

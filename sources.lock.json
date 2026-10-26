@@ -1,15 +1,1 @@
-{
-  "schemaVersion": 1,
-  "sources": {
-    "easylist": {
-      "revision": "7cc57b95b7a68d7d87f6e8aedeb2615fec707c5b",
-      "sha256": "cb08c46011c5207bb36602663f9c7c7a773e3a8b3bb5cbdf703f85ee706980f2",
-      "retrievedAt": "2026-10-25T15:16:12Z"
-    },
-    "adguard-japanese": {
-      "revision": "c966de5a825c21b518c5ea6e4bd62799852b1519",
-      "sha256": "761fddb9db6374d17b6d50556a122f290a0c8e0272a511e6d421956f18b9a0fe",
-      "retrievedAt": "2026-10-25T23:57:47Z"
-    }
-  }
-}
+{"schemaVersion":1,"sources":{"adguard-japanese":{"retrievedAt":"2026-10-26T17:26:14Z","revision":"c8d0919f50fab3519194d5dad9e3c883d1eb6a21","sha256":"dab00809bd3fc08fda1e8a6b9ad60d23d75ddb65f6332fd31829d6d70881aca8"},"easylist":{"retrievedAt":"2026-10-26T17:26:14Z","revision":"0a6e91aa4af879cbf01b6fe8f60829ff91af11bd","sha256":"49b51df0f200a60f3757f523693d6c207ab97f9062a93f0d5e921dd5817bce7a"}}}

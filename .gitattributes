@@ -1,7 +1,7 @@
 # 原本のハッシュと再生成されるバイト列をOS間で維持します。
 LICENSE -text
 NOTICE.md -text
-inputs/*.txt -text
+inputs/*.txt -text whitespace=cr-at-eol
 sources.lock.json text eol=lf
 converter/*.py text eol=lf
 converter/*.json text eol=lf

@@ -55,6 +55,22 @@ class BuildTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             build(self.root, self.config)
 
+    def test_emergency_stop_is_reproducible_even_when_upstream_grammar_is_unsupported(self):
+        path = self.root / 'inputs/easylist.txt'
+        path.write_bytes(b'@@/unsupported-regex/\n')
+        lock_path = self.root / 'sources.lock.json'
+        lock = json.loads(lock_path.read_text(encoding='utf-8'))
+        lock['sources']['easylist']['sha256'] = hashlib.sha256(path.read_bytes()).hexdigest()
+        lock_path.write_text(json.dumps(lock), encoding='utf-8')
+        with self.assertRaises(ValueError):
+            build(self.root, self.config)
+        raw, report = build(self.root, self.config, disabled=True)
+        self.assertEqual((raw, report), build(self.root, self.config, disabled=True))
+        rules = json.loads(raw)
+        self.assertTrue(rules['disabled'])
+        self.assertEqual(rules['network'], {'hosts': [], 'paths': []})
+        self.assertEqual(len(rules['sources']), 2)
+
 
 if __name__ == '__main__':
     unittest.main()

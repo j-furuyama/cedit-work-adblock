@@ -7,10 +7,10 @@ from pathlib import Path
 import re
 from datetime import datetime
 
-from compiler import canonical, compile_sources, effective_hash
+from compiler import SOURCE_METADATA, PROFILE, canonical, compile_sources, effective_hash
 
 
-def build(snapshot: Path, config: dict) -> tuple[bytes, dict]:
+def build(snapshot: Path, config: dict, *, disabled: bool = False) -> tuple[bytes, dict]:
     """パスや入力を外部URLから補充せず、固定コミットに含まれる素材だけで生成する。"""
     if hashlib.sha256((snapshot / 'LICENSE').read_bytes()).hexdigest() != config['licenseSha256']:
         raise ValueError('ライセンス全文のハッシュが一致しません')
@@ -31,7 +31,17 @@ def build(snapshot: Path, config: dict) -> tuple[bytes, dict]:
         if hashlib.sha256(raw).hexdigest() != entry.get('sha256'):
             raise ValueError('原本ハッシュが一致しません')
         sources[name] = raw
-    rules, report = compile_sources(sources, config)
+    if disabled:
+        # 上流構文の問題が停止理由でも、検証済み原本から空の停止版を再生成できます。
+        rules = {'schemaVersion': 1, 'engineProfile': PROFILE, 'disabled': True,
+                 'network': {'hosts': [], 'paths': []},
+                 'allow': {'urlLiterals': [], 'documentHosts': [], 'cosmeticHosts': []},
+                 'cosmeticRules': [], 'license': 'GPL-3.0-only', 'licenseSha256': config['licenseSha256'],
+                 'sources': [{'id': name, **SOURCE_METADATA[name], 'sha256': hashlib.sha256(raw).hexdigest()}
+                             for name, raw in sorted(sources.items())]}
+        report = {'sources': {}, 'counts': {key: 0 for key in config['limits']}}
+    else:
+        rules, report = compile_sources(sources, config)
     for source in rules['sources']:
         entry = lock['sources'][source['id']]
         retrieved = entry.get('retrievedAt')
@@ -57,9 +67,10 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('--snapshot', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--disabled', action='store_true', help='停止用の空の規則を再生成する')
     args = parser.parse_args()
     config = json.loads(Path(__file__).with_name('config.json').read_text(encoding='utf-8'))
-    rules, report = build(args.snapshot, config)
+    rules, report = build(args.snapshot, config, disabled=args.disabled)
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / 'rules.json').write_bytes(rules)
     (args.output / 'conversion-report.json').write_bytes(canonical(report))

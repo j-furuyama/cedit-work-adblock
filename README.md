@@ -16,6 +16,9 @@ python3 converter/build.py --snapshot . --output out
 sha256sum out/rules.json
 ```
 
+配布manifestの `disabled` が `true` の停止版は、上記の生成コマンドへ `--disabled` を加えてください。
+停止版でも同じ原本・権利表示を検証し、ネットワーク・非表示規則が空のデータを生成します。
+
 生成されたハッシュは配布manifestの `rulesSha256` と一致します。
 同じコミットからは、現在の上流や取得日時に依存せず同じバイト列を生成できます。
 外部Pythonパッケージは使いません。

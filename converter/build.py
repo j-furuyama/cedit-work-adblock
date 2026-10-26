@@ -18,7 +18,7 @@ def build(snapshot: Path, config: dict, *, disabled: bool = False) -> tuple[byte
     if len(lock_raw) > 65536:
         raise ValueError('原本参照が容量上限を超えています')
     lock = json.loads(lock_raw)
-    if lock.get('schemaVersion') != 1 or set(lock.get('sources', {})) != {'easylist', 'adguard-japanese'}:
+    if type(lock.get('schemaVersion')) is not int or lock.get('schemaVersion') != 1 or set(lock.get('sources', {})) != {'easylist', 'adguard-japanese'}:
         raise ValueError('原本参照の形式が不正です')
     sources = {}
     for name, entry in lock['sources'].items():

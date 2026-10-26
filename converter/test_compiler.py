@@ -11,6 +11,14 @@ from cosmetics import cosmetic_rule, hiding_exception_hosts
 
 
 class CompilerTests(unittest.TestCase):
+    def test_per_site_css_budget_includes_parent_domain_rules(self):
+        self.config['reviewedCosmeticHosts'] = ['example.com']
+        for split in (False, True):
+            lines = [f'{"news.example.com" if split and index >= 100 else "example.com"}##.a{"x" * 240}{index}' for index in range(200)]
+            sources = {**self.sources, 'easylist': self.sources['easylist'] + ('\n'.join(lines)).encode()}
+            with self.subTest(split=split), self.assertRaisesRegex(ValueError, '32KiB'):
+                compile_sources(sources, self.config)
+
     def setUp(self):
         self.config = json.loads(Path(__file__).with_name('config.json').read_text())
         self.sources = {'easylist': b'! metadata\n||ads.example.com^\n||cdn.example.com/ads/\n',

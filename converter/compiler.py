@@ -95,6 +95,16 @@ def compile_sources(sources: dict[str, bytes], config: dict) -> tuple[dict, dict
                     for name, raw in sorted(sources.items())],
     }
     limits = config['limits']
+    cosmetic_bytes = Counter()
+    for rule in result['cosmeticRules']:
+        for host in rule['domains']:
+            cosmetic_bytes[host] += len(rule['selector']) + 1
+    largest_site = 0
+    for host in cosmetic_bytes:
+        parts = host.split('.')
+        largest_site = max(largest_site, sum(cosmetic_bytes['.'.join(parts[index:])] for index in range(len(parts))))
+    if largest_site > 32768:
+        raise ValueError('サイト別セレクターが32KiBを超えています')
     counts = {'hosts': len(hosts), 'pathHosts': len(paths),
               'pathPrefixes': sum(map(len, paths.values())), 'cosmeticRules': len(cosmetics),
               'allowLiterals': len(allow_literals), 'bytes': len(canonical(result))}

@@ -1,9 +1,9 @@
 [Adblock Plus 2.0]
-! Version: 202610282239
+! Version: 202610282319
 ! Title: EasyList
-! Last modified: 28 Oct 2026 22:39 UTC
+! Last modified: 28 Oct 2026 23:19 UTC
 ! Expires: 4 days (update frequency)
-! Commit: cb5819c078d89c0bcc16bc8bd4399aadee83640a
+! Commit: f98130722dfcd5a89604b97a8ab25889dfe18794
 ! *** easylist:template_header.txt ***
 ! 
 ! Please report any unblocked adverts or problems
@@ -22167,6 +22167,7 @@ browsershots.org#@#.advert_area
 ||clrmdifzkawbh.space^
 ||clrqbqtonradt.online^
 ||clrstm.com^
+||clsqswuxxusai.online^
 ||cltdabpjiaqlw.space^
 ||cltnopjcmaxkj.website^
 ||clubdombyssus.qpon^
@@ -23198,6 +23199,7 @@ browsershots.org#@#.advert_area
 ||cvuestnhwbnix.site^
 ||cvuydvdirfxxq.site^
 ||cvwgltvuviniv.space^
+||cvwlyddpgeiqo.online^
 ||cvxbbrcunmulw.site^
 ||cvxkkuhbqgwxo.space^
 ||cvyadqizofrsw.space^
@@ -26842,6 +26844,7 @@ browsershots.org#@#.advert_area
 ||fakirtautsdawcock.cyou^
 ||fakxsvgrcltto.online^
 ||falcopeacing.com^
+||faleajimuwnyc.space^
 ||falhcegbmvooc.site^
 ||falkag.net^
 ||falkwo.com^
@@ -28426,6 +28429,7 @@ browsershots.org#@#.advert_area
 ||gcedzxjqncgacv.com^
 ||gcenter.it^
 ||gcfrdafbxmvza.space^
+||gcfzzrbyuwuqs.space^
 ||gchqofbpwsvhz.website^
 ||gcjeomlguifln.online^
 ||gcmwodwqcaqjw.space^
@@ -29465,6 +29469,7 @@ browsershots.org#@#.advert_area
 ||guitarmist.com^
 ||gukahdbam.com^
 ||gukogwaqmfik.in^
+||guktlijchxcvs.space^
 ||gukzebkckkvxv.website^
 ||gulamanmuridazon.cyou^
 ||gulfingluffs.com^
@@ -34693,6 +34698,7 @@ browsershots.org#@#.advert_area
 ||lexrqreuosm.com^
 ||leygborxkiehx.space^
 ||leyudceditkcm.website^
+||lezzvlkcorgil.space^
 ||lfavcwgydohba.store^
 ||lfcnxhdzwwyka.space^
 ||lfdepfhvoeygp.site^
@@ -35905,6 +35911,7 @@ browsershots.org#@#.advert_area
 ||matildawu.online^
 ||matiro.com^
 ||matlesstoledan.cyou^
+||matshernantgedds.cyou^
 ||mattersmark.com^
 ||matterssharplyraw.com^
 ||matthewdiswerelakshmi.cfd^
@@ -39478,6 +39485,7 @@ browsershots.org#@#.advert_area
 ||osarxppvrguib.site^
 ||osawypgombkcb.space^
 ||osazlpwnrdxaa.space^
+||osbgapoyvtpox.space^
 ||osbhitftyhu.in^
 ||oscineabettal.cfd^
 ||oscseiyqeaafd.website^
@@ -41932,6 +41940,7 @@ browsershots.org#@#.advert_area
 ||pvdnugjwyrkad.website^
 ||pveexneovrnca.space^
 ||pveldvvjrvgru.site^
+||pvewcgqdsgbnn.website^
 ||pvgbwckgrfmic.site^
 ||pvhlrsqduzzfv.website^
 ||pvjulyacziwkv.space^
@@ -49030,6 +49039,7 @@ browsershots.org#@#.advert_area
 ||ucuqtxhmdgvfr.website^
 ||ucuumhsxenzwq.online^
 ||ucwypnemwclwd.online^
+||ucyqufwwjyhex.space^
 ||udalemetine.cyou^
 ||udbaa.com^
 ||udcuyvlyoqykt.site^
@@ -53690,6 +53700,7 @@ browsershots.org#@#.advert_area
 ||yjvfvqdaexlah.site^
 ||yjvyixarcwhfy.site^
 ||yjwajohilqxia.online^
+||yjxbbxhxtnucj.website^
 ||yjyjyzprctiln.site^
 ||yjzgncwwpcjve.online^
 ||yjzuchutwulus.online^

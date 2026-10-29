@@ -1884,6 +1884,7 @@ kuruma-news.jp,magmix.jp,trafficnews.jp$$div[data-history="photo_extra"]
 /wp-content/uploads/2024/09/fanza_ad$image
 !
 ! Malware/Phishing
+||amazonaws.com/*/e-Tax%E$document
 ||amazonaws.com/app.apk?id=$document
 .com/download.php?id=$subdocument
 ||amazonaws.com/Vpass.apk$document
@@ -2312,9 +2313,6 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
-gofile-douga.com##.flex-nowrap > a[target="_blank"]:has(> span.myfans-nav-signal-badge)
-gofile-douga.com##.grid > div[class^="col-span-"] > aside.my-4
-gofile-douga.com##div[id^="bnc_ad"]
 twidouga.net###video-grid > div.grid-item--wide[style]:not([data-id])
 ||5ch.io/adstir.html
 kako.5ch.io##.h-\[300px\]
@@ -4335,7 +4333,7 @@ hamachan.info##.Infeed
 tomoyuki65.com##.post-list-card > div[class="post-list cf"]:has(> ins.adsbygoogle)
 ngauge.jp##div.widget:has(> div.dp_text_widget > p > ins.adsbygoogle)
 ||cu-ad.tbs.co.jp^$media,redirect=noopmp4-1s
-twidouga.net,les-koko.com,anige-sokuhouvip.com##div[id^="bnc_ad"]
+gofile-douga.com,twidouga.net,les-koko.com,anige-sokuhouvip.com##div[id^="bnc_ad"]
 emonzyaku.com##.entry-content > h4:has(table a[href^="https://hb.afl.rakuten.co.jp/ichiba/"])
 emonzyaku.com##.entry-content > p[style^="text-align:"]
 ||rokemoba.com/smartphone/wp-content/uploads/2024/04/rakuten-

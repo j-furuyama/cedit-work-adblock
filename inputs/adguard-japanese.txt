@@ -448,9 +448,12 @@
 !
 !
 ! www.slorepo.com anti-adb
+slorepo.com#%#//scriptlet('prevent-setTimeout', 'bait')
 slorepo.com#%#//scriptlet('prevent-fetch', 'doubleclick.net')
-!+ PLATFORM(ios, ext_safari, ext_android_cb)
+!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=slorepo.com
 @@||googleads.g.doubleclick.net/pagead/id$xmlhttprequest,domain=slorepo.com
+!#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244783
 ||plicy.net/Js/pw-guard.js
 ! AdMax 広告ブロック検知スクリプト v1.0.0
@@ -493,13 +496,12 @@ e-words.jp###abmessage
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237504
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234737
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234232
-trogiupnhanh.com,mangaruu.com,rawfree.top,soraraw.*#%#//scriptlet('prevent-fetch', '/\?abg=|adsbygoogle|tpc\.googlesyndication\.com|doubleclick\.net|googleadservices\.com/')
-trogiupnhanh.com,mangaruu.com,rawfree.top,soraraw.*#%#//scriptlet('prevent-element-src-loading', 'script', '/adsbygoogle|tpc\.googlesyndication\.com|doubleclick\.net|googleadservices\.com|google-analytics\.com|fbevents\.js/')
-
-trogiupnhanh.com,mangaruu.com,rawfree.top,soraraw.*#%#//scriptlet('set-constant', 'navigator.brave', 'undefined')
+wakuraw.com,klmanga.cloud,trogiupnhanh.com,mangaruu.com,rawfree.top,soraraw.*#%#//scriptlet('prevent-fetch', '/\?abg=|adsbygoogle|tpc\.googlesyndication\.com|doubleclick\.net|googleadservices\.com/')
+wakuraw.com,klmanga.cloud,trogiupnhanh.com,mangaruu.com,rawfree.top,soraraw.*#%#//scriptlet('prevent-element-src-loading', 'script', '/adsbygoogle|tpc\.googlesyndication\.com|doubleclick\.net|googleadservices\.com|google-analytics\.com|fbevents\.js/')
+wakuraw.com,klmanga.cloud,trogiupnhanh.com,mangaruu.com,rawfree.top,soraraw.*#%#//scriptlet('set-constant', 'navigator.brave', 'undefined')
 !#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=soraraw.net|soraraw.site|rawfree.top|mangaruu.com|trogiupnhanh.com
-@@||securepubads.g.doubleclick.net/tag/js/gpt.js$xmlhttprequest,domain=soraraw.net|soraraw.site|rawfree.top|mangaruu.com|trogiupnhanh.com
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=soraraw.net|soraraw.site|rawfree.top|mangaruu.com|trogiupnhanh.com|wakuraw.com|klmanga.cloud
+@@||securepubads.g.doubleclick.net/tag/js/gpt.js$xmlhttprequest,domain=soraraw.net|soraraw.site|rawfree.top|mangaruu.com|trogiupnhanh.com|wakuraw.com|klmanga.cloud
 !#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233289
 @@||genshin-soku.com/wp-content/plugins/amazon-egift-donation/assets/front.js
@@ -676,7 +678,7 @@ video.tv-tokyo.co.jp##.ad-block-overlay-denied
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199758
 chobirich.com#$#.Enquete { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176057
-toyokeizai.net###tpModal
+j-cast.com,toyokeizai.net###tpModal
 ! hhttps://github.com/AdguardTeam/AdguardFilters/issues/209363
 shukatsubbs.com,localch.net,best-hit.tv,h178.com,j-baseball.club,j-basketball.club,j-rugby.club,j-volleyball.club,jukenbbs.com#$#.ad.ads.adsbygoogle.ad-space.ad-banner.amp_ad.file-display-area { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195303
@@ -2316,6 +2318,12 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+city.yubari.lg.jp##.wrap_banner5
+||city.yubari.lg.jp/uploaded/banner/
+goal.com##.fco-affiliate-button
+goal.com##.fco-affiliate-promo-panel
+||slorepo.com/v*/assets/srmeasure.js^
+slorepo.com##.sr-ad-hold
 bowlroll.net##.infeed-ad
 twidouga.net###video-grid > div.grid-item--wide[style]:not([data-id])
 ||5ch.io/adstir.html
@@ -2397,6 +2405,7 @@ matsukiyococokara-online.com##.p-section__inner[class$="-000"]:has(> div.p-conte
 ||vw.mangaz.com/navi/$urltransform=/navi(\/\d+(?:\/i:\d+)?)/virgo\/view\$1/
 ! aglint-enable no-invalid-modifiers
 mangaz.com#%#//scriptlet('trusted-click-element', '#instWrapper > div > a.btn')
+/network-config.json$domain=soraraw.net|soraraw.site|rawfree.top|mangaruu.com|trogiupnhanh.com|wakuraw.com|klmanga.cloud
 mangaruu.com,rawfree.top,soraraw.*##div[class^="ReactionPanel_chapterEndAd"]
 androplus.jp##.post_content > fieldset:has(> div.please-dont-block)
 bestcalendar.jp#$#body > div[style^="min-height: "]:has(> ins.adsbygoogle) { min-height: 0 !important; height: 0 !important; }
@@ -12844,6 +12853,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 !+ PLATFORM(ios) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app#$#.hello_from_adguard_advanced_protection_ios { display: none !important; }
 !
+
 !---------------------------------------------------------------------------!
 !-------------- Fixing filtration errors (false-positive) ------------------!
 !---------------------------------------------------------------------------!

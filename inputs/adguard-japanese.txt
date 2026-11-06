@@ -19,6 +19,7 @@
 ! not for DNS
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 !
+||re-n-ai.com^$third-party
 ||kdrvs.online^$all
 ||hfgaw.online^$all
 ||jpvire.com^$all
@@ -2311,6 +2312,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+f1-gate.com##.ad-flex-group
 soraraw.com##section[class^="home-v2_adsSection"]
 doumori.com,mario2-3ds.net,mario-wiiu.net,mario3d-wiiu.net##.splink
 famitsu.com##div[class^="ArticleDetail-"][class$="column"]:has(> div > div > h2 > a[href="/ranking/amazon"])
